@@ -34,6 +34,13 @@ import { startScheduler } from './scheduler.js'
 const app = express()
 app.use(cors())
 app.use(express.json({ limit: '5mb' }))
+// Strip /clin prefix so /clin/api/* maps to /api/*
+app.use((req, res, next) => {
+  if (req.url.startsWith("/clin/api/")) req.url = req.url.slice(5)
+  else if (req.url === "/clin/api") req.url = "/api"
+  next()
+})
+
 
 const PORT = 3005
 
