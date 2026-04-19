@@ -1,0 +1,30 @@
+services:
+  clin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sheraos-clin:latest
+    container_name: sheraos-clin-app
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      JWT_SECRET: ${JWT_SECRET}
+    volumes:
+      - sheraos-clin-data:/app/server/data
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=sheraos-clin-net
+      - traefik.http.routers.sheraos-clin.rule=Host(`sheraos.com.br`) && PathPrefix(`/clin`)
+      - traefik.http.routers.sheraos-clin.entrypoints=websecure
+      - traefik.http.routers.sheraos-clin.tls=true
+      - traefik.http.routers.sheraos-clin.tls.certresolver=letsencrypt
+      - traefik.http.routers.sheraos-clin.priority=100
+      - traefik.http.services.sheraos-clin.loadbalancer.server.port=3005
+    networks:
+      - sheraos-clin-net
+volumes:
+  sheraos-clin-data:
+networks:
+  sheraos-clin-net:
+    name: sheraos-clin-net
+    driver: bridge

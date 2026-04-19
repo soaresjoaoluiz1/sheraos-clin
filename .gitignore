@@ -1,5 +1,8 @@
-node_modules/
-dist/
-server/data/
+node_modules
+dist
 .env
-*.db
+.env.local
+.env.production
+server/data
+*.log
+.DS_Store
