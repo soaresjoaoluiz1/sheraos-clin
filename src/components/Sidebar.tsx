@@ -59,9 +59,7 @@ export default function Sidebar() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#5CB8B2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img src="/clin/logo.png" alt="Sheraos Clin" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
-                </div>
+                <img src="/clin/logo.png" alt="Sheraos Clin" style={{ height: 60 }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
                 <div>
                   <div style={{ fontSize: 16, fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>Sheraos Clin</div>
                   <div className="sidebar-subtitle">Massoterapia</div>

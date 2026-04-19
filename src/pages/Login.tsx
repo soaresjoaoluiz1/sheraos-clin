@@ -19,10 +19,8 @@ export default function Login() {
   return (
     <div className="login-page">
       <div className="login-card" style={{ textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
-          <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#5CB8B2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src="/clin/logo.png" alt="Sheraos Clin" style={{ width: 48, height: 48, borderRadius: '50%', objectFit: 'cover' }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
-          </div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
+          <img src="/clin/logo.png" alt="Sheraos Clin" style={{ height: 110 }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
         </div>
         <h1>Sheraos Clin</h1>
         <div className="subtitle">Sistema de gestao para consultorios</div>
