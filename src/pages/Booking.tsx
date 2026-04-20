@@ -102,7 +102,7 @@ export default function Booking() {
       <div style={cardStyle}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
-          <img src={`${BASE}/logo.png`} alt="" style={{ height: 80, marginBottom: 12 }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+          <img src={`${BASE}/logo.png`} alt="" style={{ height: 50, marginBottom: 10 }} onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
           <h1 style={{ fontSize: 20, fontWeight: 800, color: '#2D3748', margin: 0, fontFamily: "'Outfit', sans-serif" }}>{info?.clinic_name}</h1>
           <p style={{ color: '#718096', fontSize: 13, marginTop: 4 }}>Agendamento de consulta</p>
         </div>
